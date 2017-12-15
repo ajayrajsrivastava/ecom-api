@@ -13,7 +13,7 @@ class ApplicationController < ActionController::API
 		return true if @current_user
 		
 		authenticate_or_request_with_http_token do |api_key, options|
-      		if @current_user = User.find_by(api_key: api_kexy)
+      		if @current_user = User.find_by(api_key: api_key)
 				return true
 			else
 				return false
